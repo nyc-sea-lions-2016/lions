@@ -1,3 +1,6 @@
 class Skill < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :sea_lion_skills
+  has_many :sea_lions, through: :sea_lion_skills
+
+  validates :name, presence: true
 end

@@ -1,3 +1,4 @@
 class SeaLionSkill < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :sea_lion
+  belongs_to :skill
 end
