@@ -4,6 +4,7 @@ class CreateSeaLions < ActiveRecord::Migration
       t.string :name, null: false
       t.string :ocean, null: false
       t.integer :whisker_count, default: 0
+      t.string :password_digest, null: false
 
       t.timestamps null: false
     end
