@@ -20,6 +20,12 @@
 <body>
   <nav>
     <ul>
+      <% if logged_in? %>
+        <li>Welcome, <%= current_user.name %>. Thanks for logging in.</li>
+        <li><a href="/logout">Logout</a></li>
+      <% else %>
+        <li><a href="/login">Login</a></li>
+      <% end %>
       <li><a href="/">Home</a></li>
       <li><a href="/sea_lions/new">Create a new Sea Lion</a></li>
     </ul>

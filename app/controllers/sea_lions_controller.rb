@@ -18,10 +18,7 @@ end
 # Sea Lions create action
 post '/sea_lions' do
   skills_records = params[:skills].map { |skill_id| Skill.find(skill_id) }
-  sea_lion = SeaLion.create(name: params[:name],
-                            ocean: params[:ocean],
-                            whisker_count: params[:whisker_count],
-                            skills: skills_records)
+  sea_lion = SeaLion.create(params[:sea_lion].merge(skills: skills_records))
   redirect "/sea_lions/#{sea_lion.id}"
 end
 
