@@ -1,15 +1,17 @@
+<%= erb :_errors %>
+
 <form action="/sea_lions" method="POST">
   <div>
-    <input type="text" name="sea_lion[name]" placeholder="name">
+    <input type="text" name="sea_lion[name]" placeholder="name" value="<%= @sea_lion.name %>">
   </div>
   <div>
     <input type="password" name="sea_lion[password]" placeholder="password">
   </div>
   <div>
-    <input type="text" name="sea_lion[ocean]" placeholder="ocean">
+    <input type="text" name="sea_lion[ocean]" placeholder="ocean" value="<%= @sea_lion.ocean %>">
   </div>
   <div>
-    <input type="text" name="sea_lion[whisker_count]" placeholder="whisker count">
+    <input type="text" name="sea_lion[whisker_count]" placeholder="whisker count" value="<%= @sea_lion.whisker_count %>">
   </div>
   <div>
     <h3>Skills:</h3>

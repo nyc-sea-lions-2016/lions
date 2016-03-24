@@ -8,7 +8,8 @@ post '/login' do
     session[:sea_lion_id] = sea_lion.id
     redirect '/'
   else
-    redirect '/login'
+    @errors = ["Wrong name or password"]
+    erb :'/sessions/new'
   end
 end
 
