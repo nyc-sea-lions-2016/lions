@@ -2,3 +2,23 @@
 
 <p>Whisker count: <%= @sea_lion.whisker_count %></p>
 <p>Ocean: <%= @sea_lion.ocean %></p>
+<div>
+  <% if @sea_lion.skills.any? %>
+    <h3><%= @sea_lion.name %>'s skills:</h3>
+    <ul>
+      <% @sea_lion.skills.each do |skill| %>
+        <li><%= skill.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= @sea_lion.name %> has no skills :(</p>
+  <% end %>
+</div>
+
+<p><a href="/sea_lions/<%= @sea_lion.id %>/edit">Edit this Sea Lion</a></p>
+<p>
+  <form action="/sea_lions/<%= @sea_lion.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE THIS SEA LION">
+  </form>
+</p>

@@ -1,0 +1,15 @@
+<form action="/sea_lions/<%= @sea_lion.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <div>
+    <input type="text" name="sea_lion[name]" placeholder="name" value="<%= @sea_lion.name %>">
+  </div>
+  <div>
+    <input type="text" name="sea_lion[ocean]" placeholder="ocean" value="<%= @sea_lion.ocean %>">
+  </div>
+  <div>
+    <input type="text" name="sea_lion[whisker_count]" placeholder="whisker count" value="<%= @sea_lion.whisker_count %>">
+  </div>
+  <div>
+    <input type="submit" value="Edit this Sea Lion!">
+  </div>
+</form>
