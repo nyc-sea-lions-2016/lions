@@ -32,9 +32,15 @@ end
 
 # Sea Lions show action
 get '/sea_lions/:id' do
+  
   @sea_lion = SeaLion.find(params[:id])
-  halt(401, erb(:unauthorized)) unless current_user == @sea_lion
-  erb :'/sea_lions/show'
+  if request.xhr?
+    erb :'/sea_lions/_sea_lion', locals:{sea_lion: @sea_lion}, layout: false
+  else
+    erb :'/sea_lions/show'
+  end
+
+
 end
 
 # Sea Lions edit action
