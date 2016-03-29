@@ -15,7 +15,7 @@
   <% end %>
 </div>
 
-<p><a href="/sea_lions/<%= @sea_lion.id %>/edit">Edit this Sea Lion</a></p>
+<p><a class='edit-lion' href="/sea_lions/<%= @sea_lion.id %>/edit">Edit this Sea Lion</a></p>
 <p>
   <form action="/sea_lions/<%= @sea_lion.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
