@@ -27,6 +27,8 @@ $(document).ready(function(){
       data: $(event.target).serialize(),
       dataType: 'json'
     }).done(function(response){
+      $('#send-message').hide();
+      $("#new-message").show();
       var currentCount = $('#left-side').data().messageCount;
       var newMessages = response.message_count - currentCount;
       $("#new-count").text("There are " + newMessages + " New Messages");
@@ -40,11 +42,15 @@ $(document).ready(function(){
 var shortPoll = function(){ 
 
   var message_id = Math.max.apply( null, $(".message").map(function(index,item){ return $(item).data().id } ))
+
+
   $.ajax({
     url: '/messages/update',
     data: {message_id: message_id},
     dataType: 'json'
   }).done(function(messages){
+    var temp  = message_id;
+    $("#new-count").text('');
     messages.forEach(function(message){
       $('#message-stream').append( messageToHtml(message)  )
     })
