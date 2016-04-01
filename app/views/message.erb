@@ -1,0 +1,18 @@
+<div id='new-count' class='row small-12 columns'>
+
+</div>
+<div class='row'>
+  <div id='left-side' class='small-6 columns' data-message-count='<%= @msg_count %>' >
+    <h2>Messages</h2>
+    <div id='message-stream'>
+      <% @messages.each do |message| %>
+        <div class='message' data-id='<%= message.id %>'>
+          <%= message.message %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id='right-side' class='small-6 columns'>
+    <a id='new-message' href='/messages/new'>add new message</a> 
+  </div>
+</div>
